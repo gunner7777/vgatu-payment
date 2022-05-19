@@ -1,0 +1,20 @@
+@use 'bfa-button-base';
+
+.bfa-button {
+  @include bfa-button-base.base;
+}
+
+.bfa-circle-button {
+  @include bfa-button-base.circle-button(bfa-button-base.$circle--button-size);
+
+  &_small {
+    line-height: 0;
+    width: bfa-button-base.$circle--button-size-small;
+    height: bfa-button-base.$circle--button-size-small;
+  }
+}
+
+.bfa-button, .bfa-circle-button {
+  vertical-align: middle;
+}
+

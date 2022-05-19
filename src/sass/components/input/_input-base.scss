@@ -1,0 +1,25 @@
+$padding: 8px !default;
+$min-width: 200px !default;
+$border-radius: 4px !default;
+$border-color: #BD0033 !default;
+$border-color-alert: #E91818 !default;
+$placeholder-color: #9A9EA8;
+$line-height: 27px;
+
+@mixin base {
+  padding: $padding;
+  min-width: $min-width;
+  line-height: $line-height;
+  border: 1px solid var(--primary-main, $border-color);
+  border-radius: var(--border-radius, $border-radius);
+
+  &.invalid {
+    border: 1px solid var(--alert);
+    background-color: rgba(233,24,24, 0.1);
+  }
+
+  &:focus,
+  &:active {
+    outline: 3px solid var(--accent-main);
+  }
+}

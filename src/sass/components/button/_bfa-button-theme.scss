@@ -1,0 +1,26 @@
+$default: #D1D5D8;
+$primary-main: #528CCB;
+$accent-main: #44B39D;
+$alert: #E83A30;
+$primary-text: #020417;
+$secondary-text: #ffffff;
+
+@mixin color {
+  /*default button color*/
+  &:not(.bfa-primary):not(.bfa-accent):not(.bfa-warn) {
+    background-color: var(--default, $default);
+    color: var(--primary-text, $primary-text);
+  }
+  &.bfa-primary {
+    background-color: var(--primary-main, $primary-main);
+    color: var(--secondary-text, $secondary-text);
+  }
+  &.bfa-accent {
+    background-color: var(--accent-main, $accent-main);
+    color: var(--secondary-text, $secondary-text);
+  }
+  &.bfa-warn {
+    background-color: var(--alert, $alert);
+    color: var(--secondary-text, $secondary-text);
+  }
+}

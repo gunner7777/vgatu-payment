@@ -1,0 +1,79 @@
+@use '../base/mixin' as mx;
+
+.logo {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 0.94rem;
+
+  &__img {
+    //width: 130px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 15%;
+  }
+
+  &__title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 82%;
+
+    & > p:nth-of-type(2) {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    & > p:nth-of-type(3) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@include mx.mq-max(876px) {
+  .logo {
+    &__title {
+      & > p:nth-of-type(2) {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@include mx.mq-max(767px) {
+  .logo {
+    &__img {
+      //flex: 1 0 20%;
+      flex-basis: 20%;
+    }
+    &__title {
+      //flex: 1 1 75%;
+      flex-basis: 75%;
+    }
+  }
+}
+
+@include mx.mq-max(575px) {
+  .logo {
+    flex-direction: row;
+    &__img {
+      //flex: 0 0 20%;
+      flex-grow: 0;
+      flex-basis: 35%;
+    }
+    &__title {
+      flex-basis: 100%;
+      text-align: center;
+      & > p:nth-of-type(2) {
+        font-size: 1rem;
+      }
+
+      & > p:nth-of-type(3) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+//@use '../base/mixin' as mx;
+
+.header {
+  grid-area: header;
+  padding: 25px 0;
+  height: 100%;
+  border-bottom: 4px solid var(--primary-main, #BD0033);
+}
+
+/*@include mx.mq-max(575px) {
+  .header {
+    padding: 25px 0;
+  }
+}*/

@@ -1,0 +1,58 @@
+@use 'buttons-common';
+@use 'bfa-button-theme' as bt;
+
+$margin: 0 !default;
+$padding: 0 16px !default;
+$min-width: 60px !default;
+$line-height: 36px !default;
+$border-radius: 4px !default;
+$opacity: 1 !default;
+$transition: opacity .3s ease-out !default;
+
+$circle--button-border-radius: 50% !default;
+$circle--button-size: 45px !default;
+$circle--button-size-small: 30px !default;
+$circle-button-font-size: 1.5rem;
+
+@mixin base {
+  box-sizing: border-box;
+  position: relative;
+
+  @include buttons-common.reset;
+
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: baseline;
+  opacity: $opacity;
+
+  margin: $margin;
+  padding: $padding;
+  min-width: $min-width;
+  line-height: $line-height;
+  border-radius: var(--border-radius, $border-radius);
+  transition: $transition;
+
+  @include bt.color;
+
+  &.bfa-button-disabled {
+    cursor: default;
+    opacity: .5;
+  }
+
+  &:not(.bfa-button-disabled):hover {
+    opacity: calc(#{$opacity} - .15);
+  }
+}
+
+@mixin circle-button($size) {
+  @include base;
+  min-width: 0;
+  width: $size;
+  height: $size;
+  padding: 0;
+  border-radius: $circle--button-border-radius;
+  font-size: $circle-button-font-size;
+}

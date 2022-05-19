@@ -1,0 +1,22 @@
+@use '../base/mixin' as mx;
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  grid-template-areas:
+    "forms bank-info";
+  gap: 50px;
+}
+
+@include mx.mq-max(767px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "forms"
+     "bank-info";
+  }
+}
+
+

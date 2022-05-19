@@ -1,0 +1,36 @@
+@use '../base/mixin' as mx;
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "header"
+    "services"
+    "content";
+  grid-area: wrapper;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+@include mx.mq-max(991px) {
+  .wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@include mx.mq-max(767px) {
+  .wrapper {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+/*@include mx.mq-max(575px) {
+  .wrapper {
+    grid-template-rows: auto auto 1fr;
+  }
+}*/

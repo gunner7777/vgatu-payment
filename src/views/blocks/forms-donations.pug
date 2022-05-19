@@ -1,0 +1,21 @@
+main.payment-form__outer
+  h1.payment-form__title Пожертвования
+  form.payment-form(action="./php/payment.php" method="post")
+    input(type="hidden", name="serviceId", value="f6", tabindex="-1")
+
+    div.payment-form__group
+      label.payment-form__label ФИО жертвователя
+        input.payment-form__input(type="text", id="namePayer", name="namePayer", placeholder="ФИО жертвователя", aria-labelledby="ФИО жертвователя", tabindex="0", required)
+
+    div.payment-form__group
+          label.payment-form__label Номер договора
+            input.payment-form__input(type="text", id="contract", name="contract", placeholder="Номер договора", aria-labelledby="Номер договора", tabindex="0", required)
+
+    div.payment-form__group
+      a.payment-form__link(href="https://vgsha.info/wp-content/uploads/docs/academy/assocVypusk/dogovor_pozhervovaniya.docx", aria-label="contract file", tabindex="0") Ссылка на договор
+
+    div.payment-form__group
+      label.payment-form__label Сумма
+        input.payment-form__input(type="text", id="payment", name="payment", placeholder="1111.11", aria-labelledby="Сумма для оплаты", tabindex="0", required)
+
+    button.payment-form__button.bfa-button.bfa-button-base.bfa-primary.bfa-button-disabled(type="submit", tabindex="0", aria-disabled="true", disabled) Оплатить

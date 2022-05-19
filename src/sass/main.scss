@@ -1,0 +1,32 @@
+/* base */
+@import "./base/normalize.scss";
+@import "./base/common";
+@import "./base/fonts";
+@import "./base/variables";
+
+/* layout */
+@import "layout/wrapper";
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
+
+/* components */
+@import "./components/logo";
+@import "./components/service-list";
+@import "./components/payment-form";
+@import "./components/bank-info";
+@import "./components/payment-systems";
+
+html {
+  font-family: 'Manrope', Helvetica, Arial, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 100px;
+  grid-template-areas:
+    "wrapper"
+    "footer";
+  height: 100vh;
+}

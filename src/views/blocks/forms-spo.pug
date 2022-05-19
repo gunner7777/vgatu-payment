@@ -1,0 +1,27 @@
+main.payment-form__outer
+  h1.payment-form__title Платное образование (СПО)
+  form.payment-form(action="./php/payment.php" method="post")
+    input(type="hidden", name="serviceId", value="f2", tabindex="-1")
+
+    div.payment-form__group
+      label.payment-form__label ФИО плательщика
+        input.payment-form__input(type="text", id="namePayer", name="namePayer", placeholder="ФИО плательщика", aria-labelledby="ФИО плательщика", tabindex="0", required)
+
+    div.payment-form__group
+      label.payment-form__checkbox-label
+        input.payment-form__checkbox(type="checkbox", id="equalName", name="equalName", aria-labelledby="ФИО плательщика и проживающего совпадают", tabindex="0")
+        span ФИО плательщика и обучающегося совпадают
+
+    div.payment-form__group
+      label.payment-form__label ФИО обучающегося
+        input.payment-form__input(type="text", id="nameEdu", name="nameEdu", placeholder="ФИО обучающегося", aria-labelledby="ФИО обучающегося", tabindex="0", required)
+
+    div.payment-form__group
+      label.payment-form__label Номер договора
+        input.payment-form__input(type="text", id="contract", name="contract", placeholder="Номер договора", aria-labelledby="Номер договора", tabindex="0", required)
+
+    div.payment-form__group
+      label.payment-form__label Сумма
+        input.payment-form__input(type="text", id="payment", name="payment", placeholder="1111.11", aria-labelledby="Сумма для оплаты", tabindex="0", required)
+
+    button.payment-form__button.bfa-button.bfa-button-base.bfa-primary.bfa-button-disabled(type="submit", tabindex="0", aria-disabled="true", disabled) Оплатить
